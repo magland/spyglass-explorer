@@ -21,7 +21,7 @@ type ChatInterfaceProps = {
   height: number;
   topBubbleContent: string;
   initialUserPromptChoices?: string[];
-  onChatUploaded: (metadata: any) => void;
+  onChatUploaded: () => void;
   chatId?: string;
   setChatId: (chatId: string | undefined) => void;
 };

@@ -36,7 +36,7 @@ function ChatPage({ width, height }: ChatPageProps) {
   const [selectedTab, setSelectedTab] = useState(0);
 
   const handleChatUploaded = useCallback(
-    (metadata: any) => {
+    () => {
       const newSearchParams = new URLSearchParams();
       window.history.replaceState(
         {},
