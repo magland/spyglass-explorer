@@ -554,10 +554,10 @@ This command allows connections from your local frontend application, disables t
 
 Finally, update the URL and optional token in the form above to connect to your local Jupyter server.
 
-**To connect to JupyterHub, you can use the \`jupyter-web-proxy\` package. Run:
+**To connect to JupyterHub**, for example at hhmi.2i2c.cloud, you can use the \`jupyter-web-proxy\` package. In a terminal on your local machine, run:
 
 \`\`\`bash
-npx jupyter-web-proxy https://hub.dandiarchive.org/user/<user> -t <token> -o { originToAllow }
+npx jupyter-web-proxy https://hhmi.2i2c.cloud/user/<user> -t <token> -o { originToAllow }
 \`\`\`
 
 Replace \`<user>\` with your username and \`<token>\` with your JupyterHub token. Then select http://localhost:8010 above.
