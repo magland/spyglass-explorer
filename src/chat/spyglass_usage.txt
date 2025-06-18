@@ -1,0 +1,13 @@
+Spyglass is an open-source framework for reproducible neuroscience data analysis and sharing. It uses standardized storage via NWB:N, ensures reproducibility with DataJoint, and integrates tools like SpikeInterface, Ghostipy, and DeepLabCut. Spyglass supports interactive web-based visualizations with figurl, decentralized data sharing via Kachery, pipeline versioning through Merge tables, and safeguards collaborative work with a cautious delete mechanism.
+
+You are connected to a Spyglass instance. This is how you can view the sessions available:
+
+```python
+from pathlib import Path
+from spyglass.common import Session
+
+sessions = Session()
+print(sessions)
+```
+
+sessions is a datajoint table. The print(sessions) prints the first few rows of the table. There may be thousands of rows, so you shouldn't print the entire table.

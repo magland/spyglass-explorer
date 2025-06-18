@@ -9,6 +9,7 @@ import {
 import { getAllTools } from "./allTools";
 import { AVAILABLE_MODELS } from "./availableModels";
 import { JupyterConnectivityState } from "../jupyter/JupyterConnectivity";
+import spyglassUsageText from "./spyglass_usage.txt?raw";
 
 const constructInitialSystemMessages = async () => {
   let message1 = ``;
@@ -78,7 +79,9 @@ The following specialized tools are available.
     message1 += "\n";
   }
 
-  return [message1];
+  const message2 = spyglassUsageText;
+
+  return [message1, message2];
 };
 
 export type ChatMessageResponse = {
