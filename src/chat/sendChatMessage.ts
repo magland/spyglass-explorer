@@ -9,7 +9,7 @@ import {
 import { getAllTools } from "./allTools";
 import { AVAILABLE_MODELS } from "./availableModels";
 import { JupyterConnectivityState } from "../jupyter/JupyterConnectivity";
-import spyglassUsageText from "./spyglass_usage.txt?raw";
+import spylgassAssistantText from "./spyglass_assistant.md?raw";
 
 const constructInitialSystemMessages = async () => {
   let message1 = ``;
@@ -79,7 +79,7 @@ The following specialized tools are available.
     message1 += "\n";
   }
 
-  const message2 = spyglassUsageText;
+  const message2 = spylgassAssistantText;
 
   return [message1, message2];
 };
