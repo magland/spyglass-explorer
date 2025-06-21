@@ -137,25 +137,6 @@ The Spyglass pipeline is organized into schemas, each with a specific focus. Her
 + `position_linearization_*` – contains tables related to linearizing position data for analysis along a track
 + `ripple_*` – contains tables related to ripple analysis, which is often used in conjunction with LFP data.
 
-### Pipeline Data Flow
-
-**LFP**
-1  `common_ephys.Raw` → 2  `lfp.LFPElectrode` → 3  `lfp.v1.LFPV1` → **4 `LFPOutput`** → 5  `lfp.analysis.v1.LFPBandV1` → 6  `ripple.v1.Ripple` (optional)
-
-**Position**
-Video frames → `position.v1.RawPosition` → `position.v1.TrodesPosV1` *or* `position.v1.DLCPosV1` → **`PositionOutput`**
-
-**Spike sorting**
-`common_ephys.Raw` → `spikesorting.v1.SpikeSortingRecording` → `spikesorting.v1.SpikeSortingV1` → `spikesorting.v1.Curation` → **`SpikeSortingOutput`**
-
-**Linearized position**
-`PositionOutput` → `TrackGraph` → `linearization.v1.LinearizeV1` → **`LinearizedPositionOutput`**
-
-**Decoding**
-Inputs: `PositionOutput` + `SpikeSortingOutput`
-→ `decoding.DecodingSelection` (+ `decoding.v1.WaveformFeatures` for clusterless)
-→ `decoding.v1.DecodingV1` → **`DecodingOutput`**
-
 ### Merge tables
 
 Analogy: PositionOutput (any *Output) is a Table-of-Contents; each part table is a chapter, and merge_id is the bookmark.
